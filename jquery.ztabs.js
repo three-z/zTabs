@@ -1,6 +1,6 @@
 /*
 == zTabs ==
-Version: 1.0.0
+Version: 1.0.1
 Plugin URI: https://github.com/three-z/zTabs
 Author: Vladimir Kolpakov
 Author URI: http://kolpakov.online/
@@ -12,7 +12,8 @@ License: MIT License (MIT)
 	$.fn.zTabs = function(options) {
 
 		var settings = $.extend({
-			'activeClass': 'active',
+			'switchersActiveClass': 'active',
+			'contentActiveClass': 'active',
 			'captionItem': '.tabs-caption li',
 			'contentItem': '.tabs-content'
 		}, options);
@@ -23,8 +24,8 @@ License: MIT License (MIT)
 
 			$tabsContainer.on('click', settings['captionItem'] + ':not(.' + settings['activeClass'] + ')', function() {
 
-				$(this).addClass(settings['activeClass']).siblings().removeClass(settings['activeClass'])
-				$tabsContainer.find(settings['contentItem']).removeClass(settings['activeClass']).eq($(this).index()).addClass(settings['activeClass']);
+				$(this).addClass(settings['switchersActiveClass']).siblings().removeClass(settings['switchersActiveClass'])
+				$tabsContainer.find(settings['contentItem']).removeClass(settings['contentActiveClass']).eq($(this).index()).addClass(settings['contentActiveClass']);
 			});
 		});
 	};
