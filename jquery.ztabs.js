@@ -1,6 +1,6 @@
 /*
 == zTabs ==
-Version: 1.0.3
+Version: 1.0.4
 Plugin URI: https://github.com/three-z/zTabs
 Author: Vladimir Kolpakov
 Author URI: http://kolpakov.online/
@@ -27,7 +27,7 @@ License: MIT License (MIT)
 				e.preventDefault();
 
 				$(this).closest(settings['switcherItem']).addClass(settings['switcherActiveClass']).siblings().removeClass(settings['switcherActiveClass']);
-				$tabsContainer.find(settings['contentItem']).removeClass(settings['contentActiveClass']).eq($(this).index()).addClass(settings['contentActiveClass']);
+				$tabsContainer.find(settings['contentItem']).removeClass(settings['contentActiveClass']).eq($(this).closest(settings['switcherItem']).index()).addClass(settings['contentActiveClass']);
 			});
 		});
 	};
