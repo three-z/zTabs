@@ -22,7 +22,7 @@ License: MIT License (MIT)
 
 			var $tabsContainer = $(this);
 
-			$tabsContainer.on('click', settings['switcherItem'] + ':not(.' + settings['switcherActiveClass'] + ') a', function(e) {
+			$tabsContainer.on('click', settings['switcherItem'] + ' a', function(e) {
 
 				e.preventDefault();
 
